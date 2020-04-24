@@ -1,0 +1,873 @@
+{
+	"info": {
+		"_postman_id": "77dde273-cae5-45e9-af6a-86132ae44200",
+		"name": "PD 8.0  SCIMV2 With AT Call",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "PD V2 SCIM - Users",
+			"item": [
+				{
+					"name": "Get all users *",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{auth-token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer {{auth-token}}",
+								"disabled": true
+							},
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/scim+json",
+								"type": "text"
+							},
+							{
+								"key": "Accept-Encoding",
+								"type": "text",
+								"value": "utf-8"
+							},
+							{
+								"key": "Accept-Charset",
+								"type": "text",
+								"value": "utf-8"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{url}}{{pingdirectory_https_port}}/scim/v2/Users",
+							"host": [
+								"{{url}}{{pingdirectory_https_port}}"
+							],
+							"path": [
+								"scim",
+								"v2",
+								"Users"
+							]
+						},
+						"description": "Create a new User"
+					},
+					"response": []
+				},
+				{
+					"name": "ResourceTypes *",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{auth-token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer {{auth-token}}",
+								"disabled": true
+							},
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/scim+json"
+							},
+							{
+								"key": "Accept-Encoding",
+								"type": "text",
+								"value": "utf-8"
+							},
+							{
+								"key": "Accept-Charset",
+								"type": "text",
+								"value": "utf-8"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{url}}{{pingdirectory_https_port}}/scim/v2/ResourceTypes",
+							"host": [
+								"{{url}}{{pingdirectory_https_port}}"
+							],
+							"path": [
+								"scim",
+								"v2",
+								"ResourceTypes"
+							]
+						},
+						"description": "Create a new User"
+					},
+					"response": []
+				},
+				{
+					"name": "ResourceTypes * for users",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{auth-token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer {{auth-token}}",
+								"disabled": true
+							},
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/scim+json"
+							},
+							{
+								"key": "Accept-Encoding",
+								"type": "text",
+								"value": "utf-8"
+							},
+							{
+								"key": "Accept-Charset",
+								"type": "text",
+								"value": "utf-8"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{url}}{{pingdirectory_https_port}}/scim/v2/ResourceTypes/Users",
+							"host": [
+								"{{url}}{{pingdirectory_https_port}}"
+							],
+							"path": [
+								"scim",
+								"v2",
+								"ResourceTypes",
+								"Users"
+							]
+						},
+						"description": "Create a new User"
+					},
+					"response": []
+				},
+				{
+					"name": "Get a User *",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{auth-token}}",
+								"type": "text",
+								"disabled": true
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/scim+json",
+								"type": "text"
+							},
+							{
+								"key": "Accept-Encoding",
+								"value": "utf-8",
+								"type": "text"
+							},
+							{
+								"key": "Accept-Charset",
+								"value": "utf-8",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{url}}{{pingdirectory_https_port}}/scim/v2/Users/{{user_id}}",
+							"host": [
+								"{{url}}{{pingdirectory_https_port}}"
+							],
+							"path": [
+								"scim",
+								"v2",
+								"Users",
+								"{{user_id}}"
+							]
+						},
+						"description": "Get a User by user id"
+					},
+					"response": []
+				},
+				{
+					"name": "Find a User W ID *",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{auth-token}}",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/scim+json",
+								"type": "text"
+							},
+							{
+								"key": "Accept-Charset",
+								"value": "utf-8",
+								"type": "text"
+							},
+							{
+								"key": "Accept-Encoding",
+								"value": "utf-8",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{url}}{{pingdirectory_https_port}}/scim/v2/Users?filter=id eq \"54716bfd-fbc4-3108-ac37-bf6b1b166e37\"",
+							"host": [
+								"{{url}}{{pingdirectory_https_port}}"
+							],
+							"path": [
+								"scim",
+								"v2",
+								"Users"
+							],
+							"query": [
+								{
+									"key": "filter",
+									"value": "id eq \"54716bfd-fbc4-3108-ac37-bf6b1b166e37\""
+								}
+							]
+						},
+						"description": "Find a user by user name"
+					},
+					"response": []
+				},
+				{
+					"name": "Find a User W email *",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{auth-token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer {{auth-token}}",
+								"disabled": true
+							},
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/scim+json"
+							},
+							{
+								"key": "Accept-Charset",
+								"type": "text",
+								"value": "utf-8"
+							},
+							{
+								"key": "Accept-Encoding",
+								"type": "text",
+								"value": "utf-8"
+							}
+						],
+						"url": {
+							"raw": "{{url}}{{pingdirectory_https_port}}/scim/v2/Users?filter=mail eq \"user.14@example.com\"",
+							"host": [
+								"{{url}}{{pingdirectory_https_port}}"
+							],
+							"path": [
+								"scim",
+								"v2",
+								"Users"
+							],
+							"query": [
+								{
+									"key": "filter",
+									"value": "mail eq \"user.14@example.com\""
+								}
+							]
+						},
+						"description": "Find a user by user name"
+					},
+					"response": []
+				},
+				{
+					"name": "Create User *",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{auth-token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/scim+json",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "application/scim+json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"schemas\":[\"urn:pingidentity:schemas:Users:1.0\"],\n  \"id\":\"2819c244-7f76-453a-919d-413d904648\",\n  \"meta\":{\n    \"created\":\"2011-08-01T21:32:44.882Z\",\n    \"version\":\"W\\/\\\"e180ee84f0671b1\\\"\"},\n  \"sn\":[\"Whatever\"],\n  \"cn\":[\"Unique Value\"],\n  \"mail\": \"Ping@example.com\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}{{pingdirectory_https_port}}/scim/v2/Users/",
+							"host": [
+								"{{url}}{{pingdirectory_https_port}}"
+							],
+							"path": [
+								"scim",
+								"v2",
+								"Users",
+								""
+							]
+						},
+						"description": "Create a new User"
+					},
+					"response": []
+				},
+				{
+					"name": "Update User",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer {{auth-token}}"
+							},
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept-Encoding",
+								"type": "text",
+								"value": "utf-8"
+							},
+							{
+								"key": "Accept-Charset",
+								"type": "text",
+								"value": "utf-8"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"schemas\": [\"urn:ietf:params:scim:api:messages:2.0:PatchOp\"],\n\t\"Operations\": [{\n\t\t\"op\": \"replace\",\n\t\t\"value\": {\n\t\t\t\"mail\":\"user22.test@example.com\"\n\t\t}\n\t}]\n}"
+						},
+						"url": {
+							"raw": "{{url}}{{pingdirectory_https_port}}/scim/v2/Users/785a6384-65ff-35d5-9e27-703f0ef3de51",
+							"host": [
+								"{{url}}{{pingdirectory_https_port}}"
+							],
+							"path": [
+								"scim",
+								"v2",
+								"Users",
+								"785a6384-65ff-35d5-9e27-703f0ef3de51"
+							]
+						},
+						"description": "Set attribute \"active\" to disable the user."
+					},
+					"response": []
+				},
+				{
+					"name": "Delete User",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer {{auth-token}}"
+							},
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/scim+json"
+							},
+							{
+								"key": "Accept-Encoding",
+								"type": "text",
+								"value": "utf-8"
+							},
+							{
+								"key": "Accept-Charset",
+								"type": "text",
+								"value": "utf-8"
+							}
+						],
+						"url": {
+							"raw": "{{url}}{{pingdirectory_https_port}}/scim/v2/Users/{{user_id}}",
+							"host": [
+								"{{url}}{{pingdirectory_https_port}}"
+							],
+							"path": [
+								"scim",
+								"v2",
+								"Users",
+								"{{user_id}}"
+							]
+						},
+						"description": "Delete a user by id"
+					},
+					"response": []
+				}
+			],
+			"auth": {
+				"type": "bearer",
+				"bearer": [
+					{
+						"key": "token",
+						"value": "{{auth-token}}",
+						"type": "string"
+					}
+				]
+			},
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "PD V2 SCIM - Groups",
+			"item": [
+				{
+					"name": "Get a Group all groups *",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{auth-token}}",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/scim+json",
+								"type": "text"
+							},
+							{
+								"key": "Accept-Encoding",
+								"value": "utf-8",
+								"type": "text"
+							},
+							{
+								"key": "Accept-Charset",
+								"value": "utf-8",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{url}}{{pingdirectory_https_port}}/scim/v2/Groups",
+							"host": [
+								"{{url}}{{pingdirectory_https_port}}"
+							],
+							"path": [
+								"scim",
+								"v2",
+								"Groups"
+							]
+						},
+						"description": "Get a group by id"
+					},
+					"response": []
+				},
+				{
+					"name": "Get a Group by id *",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{auth-token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{auth-token}}",
+								"type": "text",
+								"disabled": true
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/scim+json",
+								"type": "text"
+							},
+							{
+								"key": "Accept-Encoding",
+								"value": "utf-8",
+								"type": "text"
+							},
+							{
+								"key": "Accept-Charset",
+								"value": "utf-8",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{url}}{{pingdirectory_https_port}}/scim/v2/Groups/{{group_id}}",
+							"host": [
+								"{{url}}{{pingdirectory_https_port}}"
+							],
+							"path": [
+								"scim",
+								"v2",
+								"Groups",
+								"{{group_id}}"
+							]
+						},
+						"description": "Get a group by id"
+					},
+					"response": []
+				},
+				{
+					"name": "Find a Group by filter *",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer {{auth-token}}"
+							},
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/scim+json"
+							},
+							{
+								"key": "Accept-Charset",
+								"type": "text",
+								"value": "utf-8"
+							},
+							{
+								"key": "Accept-Encoding",
+								"type": "text",
+								"value": "utf-8"
+							}
+						],
+						"url": {
+							"raw": "{{url}}{{pingdirectory_https_port}}/scim/v2/Groups?filter=id eq \"{{display_name}}\"",
+							"host": [
+								"{{url}}{{pingdirectory_https_port}}"
+							],
+							"path": [
+								"scim",
+								"v2",
+								"Groups"
+							],
+							"query": [
+								{
+									"key": "filter",
+									"value": "id eq \"{{display_name}}\""
+								}
+							]
+						},
+						"description": "Get a group by group display name"
+					},
+					"response": []
+				},
+				{
+					"name": "Create Group *",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer {{auth-token}}"
+							},
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Accept-Encoding",
+								"type": "text",
+								"value": "utf-8"
+							},
+							{
+								"key": "Accept-Charset",
+								"type": "text",
+								"value": "utf-8"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\"schemas\":[\"urn:ietf:params:scim:schemas:core:2.0:Group\"],\n\n            \"cn\":[\"testgroup9999\"],\n            \"uniqueMember\":[\"uid=user.98,ou=people,dc=example,dc=com\"]\n            \n}"
+						},
+						"url": {
+							"raw": "{{url}}{{pingdirectory_https_port}}/scim/v2/Groups",
+							"host": [
+								"{{url}}{{pingdirectory_https_port}}"
+							],
+							"path": [
+								"scim",
+								"v2",
+								"Groups"
+							]
+						},
+						"description": "Create a new group"
+					},
+					"response": []
+				},
+				{
+					"name": "Upate Group *",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer {{auth-token}}"
+							},
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept-Encoding",
+								"type": "text",
+								"value": "utf-8"
+							},
+							{
+								"key": "Accept-Charset",
+								"type": "text",
+								"value": "utf-8"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\t\"schemas\": [\"urn:ietf:params:scim:api:messages:2.0:PatchOp\"],\r    \"Operations\": \r    [\r    \t{\r        \"op\": \"replace\",\r        \"value\": {\r            \"cn\": [\"updated_GroupName3\"],\r            \"uniqueMember\":[\"uid=user.88,ou=people,dc=example,dc=com\"]}\r        }\r     ]\r }"
+						},
+						"url": {
+							"raw": "{{url}}{{pingdirectory_https_port}}/scim/v2/Groups/{{group_id}}",
+							"host": [
+								"{{url}}{{pingdirectory_https_port}}"
+							],
+							"path": [
+								"scim",
+								"v2",
+								"Groups",
+								"{{group_id}}"
+							]
+						},
+						"description": "Add a user to group membership.\nremove a user from group membership.\nupdate group display name."
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Group *",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer {{auth-token}}",
+								"disabled": true
+							},
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/scim+json"
+							},
+							{
+								"key": "Accept-Encoding",
+								"type": "text",
+								"value": "utf-8"
+							},
+							{
+								"key": "Accept-Charset",
+								"type": "text",
+								"value": "utf-8"
+							}
+						],
+						"url": {
+							"raw": "{{url}}{{pingdirectory_https_port}}/scim/v2/Groups/{{group_id}}",
+							"host": [
+								"{{url}}{{pingdirectory_https_port}}"
+							],
+							"path": [
+								"scim",
+								"v2",
+								"Groups",
+								"{{group_id}}"
+							]
+						},
+						"description": "Delete a group by id"
+					},
+					"response": []
+				}
+			],
+			"auth": {
+				"type": "bearer",
+				"bearer": [
+					{
+						"key": "token",
+						"value": "{{auth-token}}",
+						"type": "string"
+					}
+				]
+			},
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Get Bearer Token *",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "c577499e-02c1-4133-a0a7-9b185a7e2675",
+						"exec": [
+							"pm.test(\"OIDC (Implicit) Tokens returned)\", function () {",
+							"    pm.response.to.have.status(302);",
+							"        var loc = pm.response.headers.get(\"location\").split(\"=\");",
+							"",
+							"        var access_token = loc[1].split(\"&\")[0];",
+							"",
+							"        // Parse out the Token value",
+							"        pm.environment.set(\"auth-token\", access_token);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/x-www-form-urlencoded"
+					},
+					{
+						"key": "Authorization",
+						"value": "Basic YXBpLWFkbWluOjJGZWRlcmF0ZU0wcmU=",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "pf.username",
+							"value": "af@stuff.com",
+							"type": "text"
+						},
+						{
+							"key": "pf.pass",
+							"value": "Password1",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{pfBaseURL}}/as/authorization.oauth2?response_type=token&client_id=im_client&scope=admin&redirect_uri={{redirect_uri}}",
+					"host": [
+						"{{pfBaseURL}}"
+					],
+					"path": [
+						"as",
+						"authorization.oauth2"
+					],
+					"query": [
+						{
+							"key": "response_type",
+							"value": "token"
+						},
+						{
+							"key": "client_id",
+							"value": "im_client"
+						},
+						{
+							"key": "scope",
+							"value": "admin"
+						},
+						{
+							"key": "redirect_uri",
+							"value": "{{redirect_uri}}"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}
